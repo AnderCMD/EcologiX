@@ -16,7 +16,7 @@ _Para la instalacion local es necesario tener instalado la ultima version de Nod
 npm install
 ```
 
-## Despliegue del servidor Frontend📦
+## Despliegue 📦
 
 _Ejecuta el servidor local en modo desarrollo_
 
@@ -38,6 +38,10 @@ _Frontend_
 * [Vite](https://vitejs.dev/)
 * [TailwindCSS](https://tailwindcss.com/)
 * [React](https://es.react.dev/)
+
+_Backend_
+* [NodeJS](https://nodejs.org/en)
+* [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
 
 ## Autores ✒️
 
