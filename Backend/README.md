@@ -1,4 +1,4 @@
-# EcologiX
+# EcologiX Backend
 
 _**Sistema de Monitoreo Ambiental** | Proyecto de Programacion Concurrente_
 

@@ -1,4 +1,4 @@
-# EcologiX
+# EcologiX Frontend
 
 _**Sistema de Monitoreo Ambiental** | Proyecto de Programacion Concurrente_
 
@@ -24,10 +24,10 @@ _Ejecuta el servidor local en modo desarrollo_
 npm run dev
 ```
 
-_Ejecuta el servidor local_
+_Construir el servidor para produccion_
 
 ```
-npm run start
+npm run build
 ```
 
 ## Construido con 🛠️
