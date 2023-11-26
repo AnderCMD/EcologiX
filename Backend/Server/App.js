@@ -41,15 +41,6 @@ io.on('connection', (socket) => {
 	});
 });
 
-// ? Rutas del servidor (Backend)
-import RutasAdmin from './Routes/Admin.js';
-import RutasUsuario from './Routes/Usuario.js';
-import RutasInvitado from './Routes/Invitado.js';
-
-App.use('/Admin', RutasAdmin);
-App.use('/Usuario', RutasUsuario);
-App.use(RutasInvitado);
-
 // ? Iniciar el servidor (Backend)
 const PUERTO = process.env.PUERTO || 3000;
 
