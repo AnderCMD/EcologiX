@@ -1,7 +1,7 @@
 export default function RegistroPage() {
     return (
         <div>
-            <h1>Registro</h1>
+            <h1>Registrarse</h1>
         </div>
     )
 }
