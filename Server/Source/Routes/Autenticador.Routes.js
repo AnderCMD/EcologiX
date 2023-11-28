@@ -3,6 +3,8 @@
 // ? Importaciones
 import router from 'express';
 import { AutenticacionRequerida } from '../Middlewares/ValidarToken.js';
+import { ValidarSchema } from '../Middlewares/ValidarSchema.js';
+import { RegistroSchema, LoginSchema } from '../Schemas/Autenticador.Schema.js';
 
 // ? Importaciones de controllers de autenticación
 import {
@@ -16,8 +18,8 @@ import {
 const Router = router();
 
 // ? Rutas post
-Router.post('/Login', Login);
-Router.post('/Registro', Registro);
+Router.post('/Login', ValidarSchema(LoginSchema), Login);
+Router.post('/Registro', ValidarSchema(RegistroSchema), Registro);
 Router.post('/Logout', Logout);
 
 // ? Rutas get
