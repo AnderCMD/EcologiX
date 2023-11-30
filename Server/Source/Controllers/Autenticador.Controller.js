@@ -16,7 +16,16 @@ export const Registro = async (req, res) => {
 
 	// Validar que los datos no estén vacíos
 	try {
+		const UsuarioEncontrado = await UsuarioModel.findOne({ Correo });
+		// Buscar usuario por correo
+		if (UsuarioEncontrado) {
+			// Si se encuentra el usuario
+			console.log('⚠️ ¡Correo ya registrado!');
+			res.status(400).json(['⚠️ Correo ya registrado']); // Enviar respuesta al cliente
+		}
+
 		const PasswordHash = await bcrypt.hash(Password, 10); // Encriptar contraseña
+
 		const NuevoUsuario = new UsuarioModel({
 			// Crear un nuevo usuario
 			Usuario,
@@ -31,7 +40,7 @@ export const Registro = async (req, res) => {
 
 		console.log('✅ ¡Usuario registrado exitosamente!');
 
-		res.cookie('Token', Token, { httpOnly: true }); // Enviar token al cliente
+		res.cookie('Token', Token); // Enviar token al cliente
 		res.json({
 			ID: UsuarioGuardado._id, // ID del usuario
 			Usuario: UsuarioGuardado.Usuario, // Nombre de usuario
@@ -78,7 +87,7 @@ export const Login = async (req, res) => {
 
 		console.log('✅ ¡Usuario logueado exitosamente!');
 
-		res.cookie('Token', Token, { httpOnly: true }); // Enviar token al cliente
+		res.cookie('Token', Token); // Enviar token al cliente
 		res.json({
 			ID: UsuarioEncontrado._id, // ID del usuario
 			Usuario: UsuarioEncontrado.Usuario, // Nombre de usuario
@@ -109,9 +118,7 @@ export const Logout = (req, res) => {
 
 // ? Obtener perfil de usuario
 export const Perfil = async (req, res) => {
-	const UsuarioEncontrado = await UsuarioModel.findById(
-		req.Usuario.ID
-	); // Buscar usuario por ID
+	const UsuarioEncontrado = await UsuarioModel.findById(req.Usuario.ID); // Buscar usuario por ID
 
 	if (!UsuarioEncontrado)
 		return res.status(400).json({ message: '⚠️ Usuario no encontrado' }); // Si no se encuentra el usuario
