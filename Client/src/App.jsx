@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AutenticadorProvider } from './Context/AutenticadorContext';
 
 // ? Importaciones de Paginas
+import IndexPage from './Pages/IndexPage';
 import LoginPage from './Pages/LoginPage';
 import RegistroPage from './Pages/RegistroPage';
 
@@ -14,7 +15,7 @@ export default function App() {
 		<AutenticadorProvider>
 			<BrowserRouter>
 				<Routes>
-					<Route path="/" element={ <h1>Inicio</h1> } />
+					<Route path="/" element={ <IndexPage /> } />
 					<Route path="/Login" element={ <LoginPage /> } />
 					<Route path="/Registro" element={ <RegistroPage /> } />
 					<Route path="/Tareas" element={ <h1>Tareas</h1> } />
