@@ -22,6 +22,7 @@ export const Registro = async (req, res) => {
 			// Si se encuentra el usuario
 			console.log('⚠️ ¡Correo ya registrado!');
 			res.status(400).json(['⚠️ Correo ya registrado']); // Enviar respuesta al cliente
+			return;
 		}
 
 		const PasswordHash = await bcrypt.hash(Password, 10); // Encriptar contraseña
