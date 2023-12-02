@@ -9,10 +9,14 @@ import IndexPage from './Pages/Invitado/IndexPage';
 import LoginPage from './Pages/Invitado/LoginPage';
 import RegistroPage from './Pages/Invitado/RegistroPage';
 
+// ? Importaciones de componente de rutas protegidas
+import RutasProtegidas from './RutasProtegidas'; // Rutas protegidas
+
 // ? Importacion de paginas privadas
 import InicioPage from './Pages/Usuario/InicioPage';
 import PerfilPage from './Pages/Usuario/PerfilPage';
 import SensoresPage from './Pages/Usuario/SensoresPage';
+import FormSensoresPage from './Pages/Usuario/FormSensoresPage';
 
 // ? Componentes
 export default function App() {
@@ -20,14 +24,19 @@ export default function App() {
 		<AutenticadorProvider>
 			<BrowserRouter>
 				<Routes>
+					{/* ? Rutas Publicas */}
 					<Route path='/' element={ <IndexPage /> } />
 					<Route path='/Login' element={ <LoginPage /> } />
 					<Route path='/Registro' element={ <RegistroPage /> } />
-					<Route path='/Usuario/Inicio' element={ <InicioPage /> } />
-					<Route path='/Usuario/Sensores' element={ <SensoresPage /> } />
-					<Route path='/Usuario/Agregar-Sensor' element={ <h1>Agregar Sensor</h1> } />
-					<Route path='/Usuario/Sensores/:id' element={ <h1>Actualizar Sensor</h1> } />
-					<Route path='/Usuario/Perfil' element={ <PerfilPage /> } />
+
+					{/* ? Rutas privadas */}
+					<Route element={ <RutasProtegidas /> }>
+						<Route path='/Usuario/Inicio' element={ <InicioPage /> } /> 
+						<Route path='/Usuario/Sensores' element={ <SensoresPage /> } />
+						<Route path='/Usuario/Agregar-Sensor' element={ <FormSensoresPage /> } />
+						<Route path='/Usuario/Sensores/:id' element={ <FormSensoresPage /> } />
+						<Route path='/Usuario/Perfil' element={ <PerfilPage /> } />
+					</Route>
 				</Routes>
 			</BrowserRouter>
 		</AutenticadorProvider>

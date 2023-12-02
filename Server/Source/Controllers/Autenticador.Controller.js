@@ -9,6 +9,8 @@
 import UsuarioModel from '../Models/Usuario.Model.js';
 import bcrypt from 'bcryptjs';
 import CrearTokenAcceso from '../Libs/JWT.js';
+import jwt from 'jsonwebtoken';
+import { TOKEN_SECRET } from '../Config/Config.js';
 
 // ? Registro de usuario
 export const Registro = async (req, res) => {
@@ -67,7 +69,7 @@ export const Login = async (req, res) => {
 			console.log('⚠️ ¡Correo incorrecto!');
 			return res
 				.status(400)
-				.json({ message: '⚠️ Correo o contraseña incorrectos' }); // Enviar respuesta al cliente
+				.json({ message: '⚠️ Correo o contraseña incorrecta' }); // Enviar respuesta al cliente
 		}
 
 		const PasswordCoincide = await bcrypt.compare(
@@ -79,7 +81,7 @@ export const Login = async (req, res) => {
 			console.log('⚠️ ¡Contraseña incorrecta!');
 			return res
 				.status(400)
-				.json({ message: '⚠️ Correo o contraseña incorrectos' }); // Enviar respuesta al cliente
+				.json({ message: '⚠️ Contraseña incorrecta' }); // Enviar respuesta al cliente
 		}
 
 		const Token = await CrearTokenAcceso({
@@ -88,7 +90,9 @@ export const Login = async (req, res) => {
 
 		console.log('✅ ¡Usuario logueado exitosamente!');
 
-		res.cookie('Token', Token); // Enviar token al cliente
+		// ? Enviar token al cliente con cookie segura y misma URL (para que el cliente pueda acceder a la cookie)
+		res.cookie('Token', Token);
+
 		res.json({
 			ID: UsuarioEncontrado._id, // ID del usuario
 			Usuario: UsuarioEncontrado.Usuario, // Nombre de usuario
@@ -129,4 +133,30 @@ export const Perfil = async (req, res) => {
 		Usuario: UsuarioEncontrado.Usuario, // Nombre de usuario
 		Correo: UsuarioEncontrado.Correo, // Correo del usuario
 	}); // Enviar respuesta al cliente
+};
+
+export const VerificarToken = async (req, res) => {
+	const { Token } = req.cookies; // Obtener token de la cookie
+
+	if (!Token)
+		return res.status(401).json({ message: '⚠️ Token no encontrado' }); // Si no se encuentra el token
+
+	jwt.verify(Token, TOKEN_SECRET, async (error, Usuario) => {
+		if (error) {
+			return res.status(401).json({ message: '⚠️ Token no válido' }); // Si el token no es válido
+		}
+
+		const UsuarioEncontrado = await UsuarioModel.findById(Usuario.ID); // Buscar usuario por ID
+		if (!UsuarioEncontrado) {
+			return res
+				.status(400)
+				.json({ message: '⚠️ Usuario no encontrado' }); // Si no se encuentra el usuario
+		}
+
+		return res.json({
+			ID: UsuarioEncontrado._id, // ID del usuario
+			Usuario: UsuarioEncontrado.Usuario, // Nombre de usuario
+			Correo: UsuarioEncontrado.Correo, // Correo del usuario
+		}); // Enviar respuesta al cliente
+	});
 };

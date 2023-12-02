@@ -2,6 +2,8 @@
 
 // ? Importacion de las dependencias
 import { useForm } from 'react-hook-form';
+import { UsarAutenticador } from '../../Context/AutenticadorContext';
+import { Link } from 'react-router-dom';
 
 // ? Importacion de los componentes
 import SpanComponent from '../../Components/SpanComponent';
@@ -16,9 +18,12 @@ export default function LoginPage() {
 		formState: { errors },
 	} = useForm();
 
+	// ? Importar el contexto de Autenticador
+	const { Login, errors: LoginErrors } = UsarAutenticador();
+
 	// ? Funcion para enviar los datos del formulario
 	const onSubmit = handleSubmit((data) => {
-		console.log(data);
+		Login(data);
 	});
 
 	return (
@@ -28,6 +33,18 @@ export default function LoginPage() {
 					Iniciar sesión
 				</h1>
 				<br />
+
+				{
+					LoginErrors.map((error, i) => (
+						<div
+							className="bg-red-600 p-2 text-white rounded-md mb-4"
+							key={i}
+						>
+							{error}
+						</div>
+					)) // Se muestran los errores de registro
+				}
+
 				<form onSubmit={onSubmit}>
 					<div className="mb-4">
 						<InputComponent
@@ -67,9 +84,9 @@ export default function LoginPage() {
 				</form>
 
 				<div className="mt-6 text-green-700 text-center">
-					<a href="#" className="hover:underline">
+					<Link to="/Registro" className="hover:underline">
 						¿No tienes cuenta? Registrate ahora
-					</a>
+					</Link>
 				</div>
 			</div>
 

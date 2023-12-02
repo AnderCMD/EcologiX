@@ -4,7 +4,7 @@
 import { useForm } from 'react-hook-form';
 import { UsarAutenticador } from '../../Context/AutenticadorContext';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 // ? Importaciones de componentes
 import InputComponent from '../../Components/InputComponent';
@@ -76,7 +76,7 @@ export default function RegistroPage() {
 							LabelTexto="Usuario"
 							TipoInput="text"
 							Placeholder="Usuario"
-							Dato='Usuario'
+							Dato="Usuario"
 							Requerido={true}
 							register={register} // Se registra el campo Usuario con la validacion de requerido
 						/>
@@ -94,7 +94,7 @@ export default function RegistroPage() {
 							LabelTexto="Correo"
 							TipoInput="email"
 							Placeholder="Correo"
-							Dato='Correo'
+							Dato="Correo"
 							Requerido={true}
 							register={register} // Se registra el campo Correo con la validacion de requerido
 						/>
@@ -109,7 +109,7 @@ export default function RegistroPage() {
 							LabelTexto="Contraseña"
 							TipoInput="password"
 							Placeholder="Contraseña"
-							Dato='Password'
+							Dato="Password"
 							Requerido={true}
 							register={register} // Se registra el campo Password con la validacion de requerido
 						/>
@@ -120,7 +120,12 @@ export default function RegistroPage() {
 					</div>
 					<ButtonComponent Tipo="submit" Texto="Registrarse" />
 				</form>
-				<br />
+
+				<div className="mt-6 text-green-700 text-center">
+					<Link to="/Login" className="hover:underline">
+						¿Ya tienes una cuenta? Inicia sesión
+					</Link>
+				</div>
 			</div>
 		</div>
 	);

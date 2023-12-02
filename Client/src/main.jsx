@@ -9,6 +9,7 @@ import App from './App.jsx'
 import './index.css' // Importamos el css global
 import './Assets/FontAwesome6/css/all.css' // Importamos los iconos de fontawesome
 
+// ? Renderizado de la aplicacion
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />

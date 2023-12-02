@@ -12,6 +12,7 @@ import {
 	Login,
 	Logout,
 	Perfil,
+	VerificarToken
 } from '../Controllers/Autenticador.Controller.js';
 
 // ? Inicializaciones
@@ -23,6 +24,7 @@ Router.post('/Registro', ValidarSchema(RegistroSchema), Registro);
 Router.post('/Logout', Logout);
 
 // ? Rutas get
+Router.get('/VerificarToken', VerificarToken);
 Router.get('/Perfil', AutenticacionRequerida, Perfil);
 
 // ? Exportaciones

@@ -17,6 +17,7 @@ const App = express(); // Inicializar servidor de express
 App.use(cors(
     {
         origin: 'http://localhost:5173', // Dirección del cliente
+        credentials: true, // Enviar cookies al cliente
     }
 )); // Para que el servidor acepte peticiones de otros servidores
 App.use(morgan('dev')); // Para que el servidor muestre en consola las peticiones que recibe
