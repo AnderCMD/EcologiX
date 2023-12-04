@@ -8,7 +8,6 @@ const UsuarioSchema = new mongoose.Schema(
 	{
 		// Definir el esquema de la tabla
 		Usuario: {
-			// Nombre de usuario
 			type: String, // Tipo de dato
 			required: true, // Es obligatorio
 			unique: true, // No se puede repetir

@@ -1,14 +1,16 @@
+// TODO: Esquema de la tabla Sensor
+
 // ? Importaciones
 import mongoose from 'mongoose';
 
-// ? Esquema de la tarea
-const TareaSchema = new mongoose.Schema(
+// ? Esquema del sensor
+const SensorSchema = new mongoose.Schema(
 	{
 		// Definir el esquema de la tabla
-		Titulo: {
-			// Titulo de la tarea
+		Nombre: {
 			type: String, // Tipo de dato
 			required: true, // Es obligatorio
+			unique: true, // Es único
 			trim: true, // Elimina espacios en blanco al inicio y al final
 		},
 		Descripcion: {
@@ -16,9 +18,15 @@ const TareaSchema = new mongoose.Schema(
 			required: true,
 			trim: true,
 		},
-		Fecha: {
-			type: Date,
-			default: Date.now(), // Fecha actual por defecto al crear la tarea (opcional)
+		Puerto: {
+			type: String,
+			required: true,
+			trim: true,
+		},
+		Velocidad_Transmision: {
+			type: Number, // ! Revisar si es el tipo de dato correcto para la velocidad de transmision de datos del sensor (Baudios)
+			required: true,
+			trim: true,
 		},
 		Usuario: {
 			// Referencia al usuario que creó la tarea
@@ -34,4 +42,5 @@ const TareaSchema = new mongoose.Schema(
 );
 
 // ? Exportaciones
-export default mongoose.model('Tarea', TareaSchema);
+export default mongoose.model('Sensor', SensorSchema);
+

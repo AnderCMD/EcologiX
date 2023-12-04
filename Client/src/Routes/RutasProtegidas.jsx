@@ -1,7 +1,7 @@
 // TODO: Renderizar las rutas protegidas
 
 // ? Importaciones de dependencias
-import { UsarAutenticador } from './Context/AutenticadorContext';
+import { UsarAutenticador } from '../Context/AutenticadorContext';
 import { Navigate, Outlet } from 'react-router-dom';
 
 // ? Componente para renderizar las rutas protegidas

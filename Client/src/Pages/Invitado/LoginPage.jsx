@@ -3,12 +3,13 @@
 // ? Importacion de las dependencias
 import { useForm } from 'react-hook-form';
 import { UsarAutenticador } from '../../Context/AutenticadorContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Para navegar entre paginas
 
 // ? Importacion de los componentes
 import SpanComponent from '../../Components/SpanComponent';
 import InputComponent from '../../Components/InputComponent';
 import ButtonComponent from '../../Components/ButtonComponent';
+import { useEffect } from 'react';
 
 export default function LoginPage() {
 	// ? Funcion para validar los datos del formulario
@@ -19,17 +20,25 @@ export default function LoginPage() {
 	} = useForm();
 
 	// ? Importar el contexto de Autenticador
-	const { Login, errors: LoginErrors } = UsarAutenticador();
+	const { Login, errors: LoginErrors, Autenticado } = UsarAutenticador();
+	const Navegacion = useNavigate();
 
 	// ? Funcion para enviar los datos del formulario
 	const onSubmit = handleSubmit((data) => {
 		Login(data);
 	});
 
+	// ? Si el usuario esta autenticado, redirigirlo a la pagina de inicio
+	useEffect(() => {
+		if (Autenticado) {
+			Navegacion('/Usuario/Inicio');
+		}
+	}, [Autenticado, Navegacion]);
+
 	return (
 		<div className="flex justify-center items-center h-screen">
 			<div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-				<h1 className="text-4xl font-semibold mb-4 text-green-700">
+				<h1 className="text-4xl font-semibold mb-4 text-emerald-700">
 					Iniciar sesión
 				</h1>
 				<br />
@@ -74,16 +83,15 @@ export default function LoginPage() {
 						)}
 					</div>
 
-					<div className="mb-6 text-green-700">
+					<div className="mb-6 text-emerald-700">
 						<a href="#" className="hover:underline">
 							¿Olvidaste tu contraseña?
 						</a>
 					</div>
-					<br />
 					<ButtonComponent Tipo="submit" Texto="Iniciar sesión" />
 				</form>
 
-				<div className="mt-6 text-green-700 text-center">
+				<div className="mt-6 text-emerald-700 text-center">
 					<Link to="/Registro" className="hover:underline">
 						¿No tienes cuenta? Registrate ahora
 					</Link>

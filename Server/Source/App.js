@@ -8,7 +8,7 @@ import cors from 'cors';
 
 // ? Importaciones de rutas
 import AutenticadorRoutes from './Routes/Autenticador.Routes.js';
-import TareasRoutes from './Routes/Tareas.Routes.js';
+import SensoresRoutes from './Routes/Sensores.Routes.js';
 
 // ? Inicializaciones
 const App = express(); // Inicializar servidor de express
@@ -26,7 +26,7 @@ App.use(cookieParser()); // Para que el servidor entienda las cookies
 
 // ? Rutas
 App.use('/API', AutenticadorRoutes); // Rutas de autenticación  Ejemplo: http://localhost:3000/API/Login
-App.use('/API', TareasRoutes); // Rutas de tareas  Ejemplo: http://localhost:3000/API/Tareas
+App.use('/API', SensoresRoutes); // Rutas de sensores  Ejemplo: http://localhost:3000/API/Sensores
 
 // ? Exportaciones
 export default App;

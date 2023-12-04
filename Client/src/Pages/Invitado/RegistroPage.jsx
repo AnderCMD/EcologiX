@@ -54,7 +54,7 @@ export default function RegistroPage() {
 			</div>
 
 			<div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-				<h1 className="text-4xl font-semibold mb-4 text-green-700">
+				<h1 className="text-4xl font-semibold mb-4 text-emerald-700">
 					Registrarse
 				</h1>
 				<br />
@@ -121,7 +121,7 @@ export default function RegistroPage() {
 					<ButtonComponent Tipo="submit" Texto="Registrarse" />
 				</form>
 
-				<div className="mt-6 text-green-700 text-center">
+				<div className="mt-6 text-emerald-700 text-center">
 					<Link to="/Login" className="hover:underline">
 						¿Ya tienes una cuenta? Inicia sesión
 					</Link>

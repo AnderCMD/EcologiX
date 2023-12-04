@@ -66,6 +66,13 @@ export const AutenticadorProvider = ({ children }) => {
 		}
 	};
 
+	// ? Funcion para cerrar sesion
+	const Logout = () => {
+		cookies.remove('Token'); // Eliminar la cookie del token
+		setUsuario(null); // Limpiar el usuario
+		setAutenticado(false); // Cambiar el estado de autenticacion
+	};
+
 	// ? Funcion para eliminar los errores de validacion de datos
 	useEffect(() => {
 		if (errors.length > 0) {
@@ -125,6 +132,7 @@ export const AutenticadorProvider = ({ children }) => {
 			value={{
 				Registro,
 				Login,
+				Logout,
 				Cargando,
 				Usuario,
 				Autenticado,
