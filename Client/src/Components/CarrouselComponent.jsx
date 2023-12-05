@@ -2,14 +2,14 @@ import propTypes from 'prop-types';
 
 export default function CarrouselComponent({DatosCarrousel}) {
     return(
-        <div id="default-carousel" className="relative w-full" data-carousel="slide" >
+        <div id="default-carousel" className="relative w-full z-0" data-carousel="slide" >
             {/* <!-- Carousel wrapper --> */}
             <div className="relative h-56 overflow-hidden md:h-96">
                 { // Items
                     DatosCarrousel.map((Datos) => {
                         return (
-                            <div key={ Datos.ID } className="hidden duration-700 ease-in-out" data-carousel-item>
-                                <img src={ Datos.Imagen } className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt={ Datos.Descripcion } />
+                            <div key={ Datos.ID } className="hidden duration-700 ease-in-out transition-all" data-carousel-item>
+                                <img src={ Datos.Imagen } className="absolute block object-cover w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt={ Datos.Descripcion } />
                             </div>
                         );
                     })

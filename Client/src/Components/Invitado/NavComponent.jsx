@@ -1,6 +1,6 @@
 export default function NavComponent() {
     return(
-        <nav className="border-gray-200 bg-gray-900 shadow-lg shadow-emerald-900 z-0">
+        <nav className="border-gray-200 bg-gray-900 shadow-sm shadow-white z-10">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse hover:scale-110 transition-all">
                     <img src="/Images/Ecologix-Blanco.svg" className="h-8" alt="EcologiX Logo" />

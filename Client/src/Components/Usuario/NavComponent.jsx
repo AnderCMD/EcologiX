@@ -5,7 +5,7 @@ export default function NavComponent() {
     const { Logout } = UsarAutenticador(); // Obtener la funcion Logout del contexto de Autenticador
 
     return(
-        <aside className="flex flex-col text-center items-center w-16 h-screen overflow-x-hidden py-8 overflow-y-auto bg-gray-900 border-gray-200 shadow-xl shadow-emerald-800 justify-between z-0">
+        <aside className="flex flex-col text-center items-center w-16 h-screen overflow-x-hidden py-8 overflow-y-auto bg-gray-900 border-gray-200 shadow-ml shadow-white justify-between z-0">
             <div className="flex gap-6">
                 <Link to="/Usuario/Inicio" className="flex flex-col gap-12">
                     <img className="w-auto h-12" src="/Icons/Ecologix-Icono.svg" alt="Logo EcologiX" />

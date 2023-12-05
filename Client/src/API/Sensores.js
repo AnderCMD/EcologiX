@@ -11,8 +11,8 @@ export const ObtenerSensorRequest = (ID) => axios.get(`/Sensores/${ID}`);
 export const CrearSensorRequest = (Sensor) => axios.post('/Sensores', Sensor);
 
 // * Metodos PUT
-export const ActualizarSensorRequest = (Sensor) =>
-	axios.put(`/Sensores/${Sensor._id}`, Sensor);
+export const ActualizarSensorRequest = (ID, Sensor) =>
+	axios.put(`/Sensores/${ID}`, Sensor);
 
 // * Metodos DELETE
 export const EliminarSensorRequest = (ID) => axios.delete(`/Sensores/${ID}`);

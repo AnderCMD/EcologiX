@@ -50,7 +50,7 @@ export default function RegistroPage() {
 			<div className="flex justify-center items-center h-full">
 				<div className="w-1/2 h-screen hidden lg:block">
 					<img
-						src="/Images/EcologiX-Banner.png"
+						src="/Images/Banners/EcologiX-Banner-4.png"
 						alt="EcologiX Login"
 						className="object-fill w-full h-full"
 					/>

@@ -10,7 +10,7 @@ export default function InicioPage() {
             <NavComponent />
             <div className="">
                 <div className="">
-                    <img src="/Images/EcologiX-Banner.png" alt="" className="w-screen h-screen object-fill"/>   
+                    <img src="/Images/Banners/EcologiX-Banner-1.png" alt="" className="w-screen h-screen object-fill"/>   
                 </div>
             </div>
             

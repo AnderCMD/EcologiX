@@ -105,7 +105,7 @@ export default function LoginPage() {
 
 				<div className="w-1/2 h-screen hidden lg:block">
 					<img
-						src="/Images/EcologiX-Banner.png"
+						src="/Images/Banners/EcologiX-Banner-2.png"
 						alt="EcologiX Login"
 						className="object-fill w-full h-full"
 					/>

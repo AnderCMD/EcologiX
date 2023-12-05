@@ -17,6 +17,9 @@ export const CrearSensorSchema = Zod.object({
 	Velocidad_Transmision: Zod.string({
 		required_error: '⚠️ La velocidad de comunicacion es requerida',
 	}),
+	Imagen: Zod.string({
+		required_error: '⚠️ La imagen es requerida',
+	}),
 });
 
 // ? Esquema de validacion de datos de entrada de los sensores para actualizar un sensor
@@ -32,5 +35,8 @@ export const ActualizarSensorSchema = Zod.object({
 	}),
 	Velocidad_Transmision: Zod.string({
 		required_error: '⚠️ La velocidad de comunicacion es requerida',
+	}),
+	Imagen: Zod.string({
+		required_error: '⚠️ La imagen es requerida',
 	}),
 });

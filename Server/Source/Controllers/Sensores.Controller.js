@@ -42,13 +42,14 @@ export const ObtenerSensor = async (req, res) => {
 export const CrearSensor = async (req, res) => {
 	try {
 		// Intentar crear un sensor
-		const { Nombre, Descripcion, Puerto, Velocidad_Transmision  } = req.body; // Obtener los datos del sensor
+		const { Nombre, Descripcion, Puerto, Velocidad_Transmision, Imagen  } = req.body; // Obtener los datos del sensor
 
 		const NuevoSensor = new SensorModel({
 			Nombre,
 			Descripcion,
 			Puerto,
 			Velocidad_Transmision,
+			Imagen,
 			Usuario: req.Usuario.ID, // Obtener el id del usuario logueado y asignarlo al sensor creado
 		}); // Crear un nuevo sensor
 		

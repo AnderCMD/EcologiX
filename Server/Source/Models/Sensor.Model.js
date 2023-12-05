@@ -28,6 +28,11 @@ const SensorSchema = new mongoose.Schema(
 			required: true,
 			trim: true,
 		},
+		Imagen: {
+			type: String,
+			required: true,
+			trim: true,
+		},
 		Usuario: {
 			// Referencia al usuario que creó la tarea
 			type: mongoose.Schema.Types.ObjectId, // Tipo de dato ObjectId (ID de MongoDB) para referenciar a un usuario de la tabla Usuario

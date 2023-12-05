@@ -3,7 +3,13 @@
 // ? Importaciones de dependencias
 import { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
-import { CrearSensorRequest, ObtenerSensoresRequest } from '../API/Sensores';
+import {
+	CrearSensorRequest,
+	ObtenerSensoresRequest,
+	EliminarSensorRequest,
+	ObtenerSensorRequest,
+	ActualizarSensorRequest,
+} from '../API/Sensores';
 
 // ? Creacion del contexto
 const SensorContext = createContext();
@@ -37,9 +43,43 @@ export default function SensorProvider({ children }) {
 
 	// Funcion para crear un sensor
 	const CrearSensor = async (Sensor) => {
-		const Respuesta = await CrearSensorRequest(Sensor);
-		console.log(Respuesta);
+		try {
+			const Respuesta = await CrearSensorRequest(Sensor);
+			console.log(Respuesta);
+		} catch (error) {
+			console.log(error);
+		}
 	};
+
+	const EliminarSensor = async (ID) => {
+		try {
+			const Respuesta = await EliminarSensorRequest(ID);
+			console.log(Respuesta);
+			if (Respuesta.status === 204)
+				ObtenerSensores(Sensores.filter((Sensor) => Sensor._id !== ID));
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const ObtenerSensor = async (ID) => {
+		try {
+			const Respuesta = await ObtenerSensorRequest(ID);
+			console.log(Respuesta);
+			return Respuesta.data;
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const ActualizarSensor = async (ID, Sensor) => {
+		try {
+			const Respuesta = await ActualizarSensorRequest(ID, Sensor);
+			console.log(Respuesta);
+		} catch (error) {
+			console.log(error);
+		}
+	}
 
 	return (
 		<SensorContext.Provider
@@ -47,6 +87,9 @@ export default function SensorProvider({ children }) {
 				Sensores,
 				CrearSensor,
 				ObtenerSensores,
+				EliminarSensor,
+				ObtenerSensor,
+				ActualizarSensor,
 			}}
 		>
 			{children}
