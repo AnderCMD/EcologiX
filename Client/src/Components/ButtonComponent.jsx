@@ -10,7 +10,7 @@ export default function ButtonComponent(props) {
 	return (
 		<button
 			type={ Tipo }
-			className="bg-emerald-700 hover:bg-emerald-600 transition-all text-white font-semibold rounded-md py-2 px-4 w-full my-2"
+			className="bg-emerald-700 hover:bg-emerald-600 transition-all text-white font-semibold rounded-md py-2 px-4 w-full my-2 hover:scale-105"
 		>
 			{ Texto }
 		</button>

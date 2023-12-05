@@ -11,14 +11,14 @@ export default function InputComponent(props) {
 		<>
 			<label
 				htmlFor={ Dato }
-				className="block text-gray-600 font-semibold mb-2"
+				className="block text-emerald-600 font-semibold mb-2"
 			>
 				{ LabelTexto }:
 			</label>
 			<input
 				id={ Dato }
 				type={ TipoInput }
-				className="w-full border border-gray-300 rounded-md py-2 px-3 mb-2 focus:outline-none focus:border-emerald-700"
+				className="w-full border border-emerald-300 text-white bg-gray-800 rounded-md py-2 px-3 mb-2 focus:outline-none focus:border-emerald-700 hover:scale-105 transition-all"
 				placeholder={ Placeholder }
 				required={ Requerido }
 				{ ...register(Dato, {Requerido}) }

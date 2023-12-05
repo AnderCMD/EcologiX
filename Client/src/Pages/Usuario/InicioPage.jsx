@@ -6,15 +6,14 @@ import NavComponent from "../../Components/Usuario/NavComponent";
 export default function InicioPage() {
     // const { Usuario } = UsarAutenticador();
     return (
-        <>
-            <div className="flex flex-row">
-                <NavComponent />
+        <div className="flex flex-row">
+            <NavComponent />
+            <div className="">
                 <div className="">
-                    <div className="">
-                        <img src="/Images/EcologiX-Banner.png" alt="" className="w-screen h-screen object-fill"/>   
-                    </div>
+                    <img src="/Images/EcologiX-Banner.png" alt="" className="w-screen h-screen object-fill"/>   
                 </div>
             </div>
-        </>
+            
+        </div>
     );
 }
