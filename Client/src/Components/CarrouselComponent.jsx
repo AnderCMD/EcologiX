@@ -2,9 +2,9 @@ import propTypes from 'prop-types';
 
 export default function CarrouselComponent({DatosCarrousel}) {
     return(
-        <div id="default-carousel" className="relative w-full z-0" data-carousel="slide" >
+        <div id="default-carousel" className="relative w-full z-0 h-full" data-carousel="slide" > {/* Quitar el h-full*/}
             {/* <!-- Carousel wrapper --> */}
-            <div className="relative h-56 overflow-hidden md:h-96">
+            <div className="relative min-h-full overflow-hidden md:h-96"> {/* Cambiar el min-h-full por h-(Tamaño)*/}
                 { // Items
                     DatosCarrousel.map((Datos) => {
                         return (

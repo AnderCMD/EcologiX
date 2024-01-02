@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function FooterComponent() {
     return (
         <footer className="bg-white dark:bg-gray-900">
@@ -11,25 +13,17 @@ export default function FooterComponent() {
                 <div className="grid grid-cols-2 gap-8 sm:gap-6">
                     <div>
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Más usados</h2>
-                        <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                            <li className="mb-4">
-                                <a href="/Login" className="hover:underline">Iniciar Sesión</a>
-                            </li>
-                            <li>
-                                <a href="/Registro" className="hover:underline">Registrarse</a>
-                            </li>
-                        </ul>
+                        <div className="text-gray-500 dark:text-gray-400 font-medium flex flex-col gap-4">
+                            <Link href="/Login" className="hover:underline">Iniciar Sesión</Link>
+                            <Link href="/Registro" className="hover:underline">Registrarse</Link>
+                        </div>
                     </div>
                     <div>
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                        <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                            <li className="mb-4">
-                                <a href="#" className="hover:underline">Politica de privacidad</a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:underline">Terminos &amp; Condiciones</a>
-                            </li>
-                        </ul>
+                        <div className="text-gray-500 dark:text-gray-400 font-medium flex flex-col gap-4">
+                            <Link href="#" className="hover:underline">Politica de privacidad</Link>
+                            <Link href="#" className="hover:underline">Terminos &amp; Condiciones</Link>
+                        </div>
                     </div>
                 </div>
             </div>

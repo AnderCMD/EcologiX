@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function NavComponent() {
     return(
         <nav className="border-gray-200 bg-gray-900 shadow-sm shadow-white z-10">
@@ -12,17 +14,11 @@ export default function NavComponent() {
                     </svg>
                 </button>
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-                    <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        <li>
-                            <a href="/" className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 hover:scale-110 transition-all"><i className="fa-solid fa-house mr-2"></i>Inicio</a>
-                        </li>
-                        <li>
-                            <a href="/Login" className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 hover:scale-110 transition-all" ><i className="fa-solid fa-unlock mr-2"></i>Iniciar Sesión</a>
-                        </li>
-                        <li>
-                            <a href="/Registro" className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 hover:scale-110 transition-all"><i className="fa-solid fa-pen-nib mr-2"></i>Registrarse</a>
-                        </li>
-                    </ul>
+                    <div className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <a href="/" className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 hover:scale-110 transition-all"><i className="fa-solid fa-house mr-2"></i>Inicio</a>
+                        <Link to="/Login" className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 hover:scale-110 transition-all" ><i className="fa-solid fa-unlock mr-2"></i>Iniciar Sesión</Link>
+                        <Link to="/Registro" className="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-emerald-700 md:p-0 hover:scale-110 transition-all"><i className="fa-solid fa-pen-nib mr-2"></i>Registrarse</Link>
+                    </div>
                 </div>
             </div>
         </nav>

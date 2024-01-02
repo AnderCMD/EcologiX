@@ -4,12 +4,12 @@
 import { useForm } from 'react-hook-form';
 import { UsarAutenticador } from '../../Context/AutenticadorContext';
 import { Link, useNavigate } from 'react-router-dom'; // Para navegar entre paginas
+import { useEffect } from 'react';
 
 // ? Importacion de los componentes
 import SpanComponent from '../../Components/SpanComponent';
 import InputComponent from '../../Components/InputComponent';
 import ButtonComponent from '../../Components/ButtonComponent';
-import { useEffect } from 'react';
 import NavComponent from '../../Components/Invitado/NavComponent';
 
 export default function LoginPage() {

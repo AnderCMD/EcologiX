@@ -10,7 +10,6 @@ const SensorSchema = new mongoose.Schema(
 		Nombre: {
 			type: String, // Tipo de dato
 			required: true, // Es obligatorio
-			unique: true, // Es único
 			trim: true, // Elimina espacios en blanco al inicio y al final
 		},
 		Descripcion: {

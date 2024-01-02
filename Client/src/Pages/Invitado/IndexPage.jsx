@@ -36,7 +36,7 @@ const DatosCarrousel = [
 // ? Exportación principal
 export default function IndexPage() {
 	return (
-		<div className="flex flex-col h-screen">
+		<div className="flex flex-col h-screen justify-between">
             <NavComponent />
 			<CarrouselComponent DatosCarrousel={DatosCarrousel} />
             <FooterComponent />

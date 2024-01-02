@@ -28,11 +28,11 @@ export default function NavComponent() {
             </nav>
 
             <div className="flex flex-col gap-6">
-                <Link to="/Logout" onClick={() => {
+                <a href="/" onClick={() => {
                     Logout(); // Cerrar sesion
                 }}>
                     <i className="fa-solid fa-right-from-bracket text-emerald-600 text-2xl hover:text-emerald-500 transition-all hover:scale-110"></i>
-                </Link>
+                </a>
                 <Link to="/Usuario/Perfil">
                     <img className="object-cover w-12 h-12 rounded-full shadow-2xl border-4 border-emerald-600" src="/Images/Foto-Perfil.png" alt="Perfil" />
                 </Link>
