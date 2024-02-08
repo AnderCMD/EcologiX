@@ -73,8 +73,12 @@ export default function SensorProvider({ children }) {
 	};
 
 	const ActualizarSensor = async (ID, Sensor) => {
+		const SensorString = Object.fromEntries(
+			Object.entries(Sensor).map(([key, value]) => [key, value.toString()])
+		);
+
 		try {
-			const Respuesta = await ActualizarSensorRequest(ID, Sensor);
+			const Respuesta = await ActualizarSensorRequest(ID, SensorString);
 			console.log(Respuesta);
 		} catch (error) {
 			console.log(error);
