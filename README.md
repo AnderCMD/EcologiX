@@ -2,6 +2,10 @@
 
 _**Sistema de Monitoreo Ambiental** | Proyecto de Programacion Concurrente_
 
+```
+Falta terminar la conexion a los sensores con serialport y arduino
+```
+
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
