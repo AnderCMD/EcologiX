@@ -1,59 +1,83 @@
 # EcologiX
 
-_**Sistema de Monitoreo Ambiental** | Proyecto de Programacion Concurrente_
-
-```
-Falta terminar la conexion a los sensores con serialport y arduino
-```
+_EcologiX es un sistema de monitoreo ecológico que utiliza Arduino para el seguimiento de datos ambientales como temperatura, humedad y calidad del aire. El sistema está desarrollado con React, Vite, ExpressJS, MongoDB y TailwindCSS, proporcionando una interfaz web interactiva para visualizar y analizar los datos en tiempo real._
 
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Despliegue** para conocer como desplegar el proyecto.
+Mira **Deployment** para conocer cómo desplegar el proyecto.
+
+### Pre-requisitos 📋
+
+Para ejecutar este proyecto en tu máquina, necesitas tener instalados los siguientes programas:
+
+* [Node.js](https://nodejs.org/) (LTS recomendado)
+* [MongoDB](https://www.mongodb.com/) - Base de datos utilizada para almacenar los datos del monitoreo
+* [Arduino IDE](https://www.arduino.cc/en/software) - Para cargar el código en la placa Arduino
+* [pnpm](https://pnpm.io/) para gestionar las dependencias
 
 ### Instalación 🔧
 
-_Para la instalacion local es necesario tener instalado la ultima version de NodeJS y ejecutar el comando desde la terminal con ruta del proyecto_
+1. Clona el repositorio
+    ```
+    git clone https://github.com/AnderCMD/EcologiX.git
+    ```
 
-```
-npm install
-```
+2. Navega al directorio del proyecto
+    ```
+    cd EcologiX
+    ```
+
+3. Instala las dependencias
+    ```
+    pnpm install
+    ```
+
+4. Configura la base de datos MongoDB para almacenar los datos de monitoreo. Asegúrate de que tu instancia de MongoDB esté corriendo localmente o en un servidor.
+
+5. Carga el código de Arduino en tu placa para empezar a recolectar datos. El código de Arduino se encuentra en la carpeta `/arduino`.
+
+6. Ejecuta el servidor de desarrollo
+    ```
+    pnpm dev
+    ```
+
+7. Abre el navegador y accede a `http://localhost:3000` para visualizar los datos de monitoreo en tiempo real.
 
 ## Despliegue 📦
 
-_Ejecuta el servidor local en modo desarrollo_
+Para desplegar este proyecto en un servidor de producción:
 
-```
-npm run dev
-```
+1. Construye el proyecto para producción:
+    ```
+    pnpm build
+    ```
 
-_Ejecuta el servidor local_
-
-```
-npm run start
-```
+2. Sube el frontend y el servidor Express a tu servidor de producción.
+3. Asegúrate de que la base de datos MongoDB esté configurada correctamente en el servidor de producción.
+4. Configura las variables de entorno adecuadas para MongoDB en el servidor.
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+* [React](https://reactjs.org/) - Biblioteca de JavaScript para la construcción de la interfaz de usuario
+* [Vite](https://vitejs.dev/) - Herramienta de construcción y desarrollo rápido para el frontend
+* [ExpressJS](https://expressjs.com/) - Framework web para Node.js utilizado en el backend
+* [MongoDB](https://www.mongodb.com/) - Base de datos NoSQL utilizada para almacenar datos de monitoreo
+* [Arduino](https://www.arduino.cc/) - Plataforma de hardware utilizada para recolectar datos ambientales
+* [TailwindCSS](https://tailwindcss.com/) - Framework de CSS utilizado para diseñar la interfaz de usuario
 
-_Frontend_
-* [Vite](https://vitejs.dev/)
-* [TailwindCSS](https://tailwindcss.com/)
-* [React](https://es.react.dev/)
+## Contribuyendo 🖇️
 
-_Backend_
-* [NodeJS](https://nodejs.org/en)
-* [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+Este proyecto ha sido realizado por mí. Si tienes alguna sugerencia o mejora, no dudes en abrir un **pull request**.
 
 ## Autores ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+* **Ander González** - *Ingeniero en Software* - [AnderCMD](https://github.com/AnderCMD)
 
-* **AnderCMD** | [Github](https://github.com/AnderCMD)
-* **Carmen244** | [Github](https://github.com/carmen244)
-* **Hector-NG** | [Github](https://github.com/Hector-NG)
+## Licencia 📄
+
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.md) para detalles.
 
 ---
-⌨️ con ❤️ por [AnderCMD](https://github.com/AnderCMD)
+⌨️ con ❤️ por [AnderCMD](https://github.com/AnderCMD) 😊
