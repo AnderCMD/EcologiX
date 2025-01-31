@@ -74,6 +74,8 @@ Este proyecto ha sido realizado por mí. Si tienes alguna sugerencia o mejora, n
 ## Autores ✒️
 
 * **Ander González** - *Ingeniero en Software* - [AnderCMD](https://github.com/AnderCMD)
+* **Carmen** - *Ingeniero en Software* - [AnderCMD](https://github.com/carmen244)
+* **Pablo Guadalupe** - *Ingeniero en Software* - [AnderCMD](https://github.com/PGMP210)
 
 ## Licencia 📄
 
