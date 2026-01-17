@@ -10,7 +10,6 @@ import UsuarioModel from '../Models/Usuario.Model.js';
 import bcrypt from 'bcryptjs';
 import CrearTokenAcceso from '../Libs/JWT.js';
 import jwt from 'jsonwebtoken';
-import { TOKEN_SECRET } from '../Config/Config.js';
 
 // ? Registro de usuario
 export const Registro = async (req, res) => {
@@ -141,7 +140,7 @@ export const VerificarToken = async (req, res) => {
 	if (!Token)
 		return res.status(401).json({ message: '⚠️ Token no encontrado' }); // Si no se encuentra el token
 
-	jwt.verify(Token, TOKEN_SECRET, async (error, Usuario) => {
+		jwt.verify(Token, process.env.TOKEN_SECRET, async (error, Usuario) => {
 		if (error) {
 			return res.status(401).json({ message: '⚠️ Token no válido' }); // Si el token no es válido
 		}

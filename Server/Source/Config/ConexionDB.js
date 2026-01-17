@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 const ConexionDB = async () => {
 	try {
 		// Intentar conectar la base de datos
-		await mongoose.connect('mongodb://localhost:27017/EcologiX');
+		await mongoose.connect(process.env.MONGODB_URI);
 		console.log('✅ ¡Base de datos conectada exitosamente!');
 		console.log('===============================================\n');
 	} catch (error) {

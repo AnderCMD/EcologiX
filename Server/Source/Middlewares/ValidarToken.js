@@ -2,7 +2,6 @@
 
 // ? Importaciones
 import jwt from 'jsonwebtoken'; // Importar librería jsonwebtoken
-import { TOKEN_SECRET } from '../Config/Config.js'; // Importar clave secreta
 
 // ? Autenticación requerida (Middleware) (Validar token de acceso)
 export const AutenticacionRequerida = (req, res, next) => {
@@ -15,7 +14,7 @@ export const AutenticacionRequerida = (req, res, next) => {
 	}
 
 	// Verificar token
-	jwt.verify(Token, TOKEN_SECRET, (error, Usuario) => {
+	jwt.verify(Token, process.env.TOKEN_SECRET, (error, Usuario) => {
 		if (error) {
 			// Si hay un error
 			console.log('⚠️ ¡No autorizado!');
