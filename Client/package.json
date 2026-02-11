@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "1.13.2",
+    "axios": "1.13.5",
     "flowbite": "4.0.1",
     "js-cookie": "3.0.5",
     "prop-types": "^15.8.1",
