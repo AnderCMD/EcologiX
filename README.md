@@ -28,6 +28,12 @@ Para ejecutar este proyecto en tu máquina, necesitas tener instalados los sigui
     ```
     cd EcologiX
     ```
+    ```
+    cd Client
+    ```
+    ```
+    cd Server
+    ```
 
 3. Instala las dependencias
     ```
@@ -43,7 +49,7 @@ Para ejecutar este proyecto en tu máquina, necesitas tener instalados los sigui
     pnpm dev
     ```
 
-7. Abre el navegador y accede a `http://localhost:3000` para visualizar los datos de monitoreo en tiempo real.
+7. Abre el navegador y accede a `http://localhost:5173` para visualizar los datos de monitoreo en tiempo real.
 
 ## Despliegue 📦
 
@@ -74,8 +80,8 @@ Este proyecto ha sido realizado por mí. Si tienes alguna sugerencia o mejora, n
 ## Autores ✒️
 
 * **Ander González** - *Ingeniero en Software* - [AnderCMD](https://github.com/AnderCMD)
-* **Carmen** - *Ingeniero en Software* - [AnderCMD](https://github.com/carmen244)
-* **Pablo Guadalupe** - *Ingeniero en Software* - [AnderCMD](https://github.com/PGMP210)
+* **Carmen** - *Ingeniera en Software* - [Carmen244](https://github.com/carmen244)
+* **Pablo Guadalupe** - *Ingeniero en Software* - [PGMP210](https://github.com/PGMP210)
 
 ## Licencia 📄
 
