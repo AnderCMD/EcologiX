@@ -27,8 +27,8 @@ importers:
         specifier: ^9.0.3
         version: 9.0.3
       mongoose:
-        specifier: ^9.1.4
-        version: 9.1.4
+        specifier: ^9.1.6
+        version: 9.1.6
       morgan:
         specifier: ^1.10.1
         version: 1.10.1
@@ -48,8 +48,8 @@ importers:
 
 packages:
 
-  '@mongodb-js/saslprep@1.4.4':
-    resolution: {integrity: sha512-p7X/ytJDIdwUfFL/CLOhKgdfJe1Fa8uw9seJYvdOmnP9JBWGWHW69HkOixXS6Wy9yvGf1MbhcS6lVmrhy4jm2g==}
+  '@mongodb-js/saslprep@1.4.11':
+    resolution: {integrity: sha512-o9rAHc0IpIjuPSxRutWpE1F62x7n+4mVS4rCNHkzhIUMQcc18bb6xEq5wd2NdN0WjepIyXIppRshYI2kQDOZVA==}
 
   '@serialport/binding-mock@10.2.2':
     resolution: {integrity: sha512-HAFzGhk9OuFMpuor7aT5G1ChPgn5qSsklTFOTUX72Rl6p0xwcSVsRtG/xaGp6bxpN7fI9D/S8THLBWbBgS6ldw==}
@@ -172,8 +172,8 @@ packages:
     resolution: {integrity: sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==}
     engines: {node: '>=8'}
 
-  bson@7.1.1:
-    resolution: {integrity: sha512-TtJgBB+QyOlWjrbM+8bRgH84VM/xrDjyBFgSgGrfZF4xvt6gbEDtcswm27Tn9F9TWsjQybxT8b8VpCP/oJK4Dw==}
+  bson@7.2.0:
+    resolution: {integrity: sha512-YCEo7KjMlbNlyHhz7zAZNDpIpQbd+wOEHJYezv0nMYTn4x31eIUM2yomNNubclAt63dObUzKHWsBLJ9QcZNSnQ==}
     engines: {node: '>=20.19.0'}
 
   buffer-equal-constant-time@1.0.1:
@@ -484,8 +484,8 @@ packages:
   minimatch@3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
 
-  mongodb-connection-string-url@7.0.0:
-    resolution: {integrity: sha512-irhhjRVLE20hbkRl4zpAYLnDMM+zIZnp0IDB9akAFFUZp/3XdOfwwddc7y6cNvF2WCEtfTYRwYbIfYa2kVY0og==}
+  mongodb-connection-string-url@7.0.1:
+    resolution: {integrity: sha512-h0AZ9A7IDVwwHyMxmdMXKy+9oNlF0zFoahHiX3vQ8e3KFcSP3VmsmfvtRSuLPxmyv2vjIDxqty8smTgie/SNRQ==}
     engines: {node: '>=20.19.0'}
 
   mongodb@7.0.0:
@@ -515,8 +515,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@9.1.4:
-    resolution: {integrity: sha512-V8JIyoWKWW+R2COlOsh6gaYw9TvczSiP/cN3Yuk1pv7ws5VNFAy5GPrK8jfz9tVYovmqdWOJRurMjL4ilYn9wA==}
+  mongoose@9.1.6:
+    resolution: {integrity: sha512-ZrtgRsJKtW3od36TVXtAnrNHOO3rqhsqfVut6IzyWyJeLLeLTqW66qej/0qB37GZd5jL06nHfAceTikkfnSqbA==}
     engines: {node: '>=20.19.0'}
 
   morgan@1.10.1:
@@ -767,7 +767,7 @@ packages:
 
 snapshots:
 
-  '@mongodb-js/saslprep@1.4.4':
+  '@mongodb-js/saslprep@1.4.11':
     dependencies:
       sparse-bitfield: 3.0.3
 
@@ -891,7 +891,7 @@ snapshots:
     dependencies:
       fill-range: 7.1.1
 
-  bson@7.1.1: {}
+  bson@7.2.0: {}
 
   buffer-equal-constant-time@1.0.1: {}
 
@@ -1204,18 +1204,18 @@ snapshots:
     dependencies:
       brace-expansion: 1.1.12
 
-  mongodb-connection-string-url@7.0.0:
+  mongodb-connection-string-url@7.0.1:
     dependencies:
       '@types/whatwg-url': 13.0.0
       whatwg-url: 14.2.0
 
   mongodb@7.0.0:
     dependencies:
-      '@mongodb-js/saslprep': 1.4.4
-      bson: 7.1.1
-      mongodb-connection-string-url: 7.0.0
+      '@mongodb-js/saslprep': 1.4.11
+      bson: 7.2.0
+      mongodb-connection-string-url: 7.0.1
 
-  mongoose@9.1.4:
+  mongoose@9.1.6:
     dependencies:
       kareem: 3.0.0
       mongodb: 7.0.0
