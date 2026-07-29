@@ -72,7 +72,16 @@ export const CrearSensor = async (req, res) => {
 // ? Eliminar sensor (DELETE)
 export const EliminarSensor = async (req, res) => {
 	try {
-		const Sensor = await SensorModel.findByIdAndDelete(req.params.id); // Buscar sensor por id y eliminarla
+		const Sensor = await SensorModel.findOneAndDelete({
+			_id: req.params.id,
+			Usuario: req.Usuario.ID,
+		}); // Buscar sensor por id y eliminarlo
+
+		if (!Sensor) {
+			console.log('⚠️ ¡Sensor no encontrado!');
+			return res.status(404).json({ message: '⚠️ Sensor no encontrado' });
+		}
+
 		console.log('✅ ¡Sensor eliminado exitosamente!');
 		res.status(204).json(Sensor); // Responder con el mensaje de exito
 	} catch (error) {
