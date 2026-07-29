@@ -85,9 +85,19 @@ export const EliminarSensor = async (req, res) => {
 // ? Actualizar sensor (PUT)
 export const ActualizarSensor = async (req, res) => {
 	try {
+		const { Nombre, Descripcion, Puerto, Velocidad_Transmision, Imagen } = req.body;
+
+		// Filtrar solo los campos permitidos para la actualización
+		const updateData = {};
+		if (Nombre !== undefined) updateData.Nombre = Nombre;
+		if (Descripcion !== undefined) updateData.Descripcion = Descripcion;
+		if (Puerto !== undefined) updateData.Puerto = Puerto;
+		if (Velocidad_Transmision !== undefined) updateData.Velocidad_Transmision = Velocidad_Transmision;
+		if (Imagen !== undefined) updateData.Imagen = Imagen;
+
 		const Sensor = await SensorModel.findByIdAndUpdate(
 			req.params.id,
-			req.body,
+			updateData,
 			{
 				new: true,
 			}
