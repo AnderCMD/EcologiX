@@ -1,4 +1,4 @@
-// TODO: Enviar datos de Usuario a la API
+// Enviar datos de Usuario a la API
 
 // ? Importaciones de paquetes
 import axios from './Axios'; // Importar axios de la instancia personalizada
