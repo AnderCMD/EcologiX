@@ -1,4 +1,4 @@
-// TODO: Modelo de la tabla Usuario
+// Modelo de la tabla Usuario
 
 // ? Importaciones
 import mongoose from 'mongoose';
