@@ -1,4 +1,4 @@
-// TODO: Componente de span para mostrar errores
+// ? Componente de span para mostrar errores
 
 // ? Importaciones de dependencias
 import PropTypes from 'prop-types';
