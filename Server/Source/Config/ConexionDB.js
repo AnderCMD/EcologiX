@@ -1,4 +1,4 @@
-// TODO: Esta clase se encarga de conectar la base de datos con el servidor.
+// Esta clase se encarga de conectar la base de datos con el servidor.
 
 // ? Importaciones
 import mongoose from 'mongoose';
