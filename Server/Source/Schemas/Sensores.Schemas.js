@@ -1,4 +1,4 @@
-// TODO: Esquemas para validar los datos de los sensores
+// Esquemas para validar los datos de los sensores
 
 // ? Importaciones
 import Zod from 'zod';

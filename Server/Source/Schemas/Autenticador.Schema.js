@@ -1,4 +1,4 @@
-// TODO: Validar los datos de entrada del autenticador
+// Validar los datos de entrada del autenticador
 
 // ? Importaciones
 import Zod from 'zod'; // Importamos zod para validar los datos de entrada
