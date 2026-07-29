@@ -1,4 +1,4 @@
-// TODO: Pagina de registro de usuarios
+// Pagina de registro de usuarios
 
 // ? Importaciones de dependencias
 import { useForm } from 'react-hook-form';
