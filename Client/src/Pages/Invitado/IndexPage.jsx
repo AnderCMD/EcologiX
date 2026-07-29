@@ -1,4 +1,4 @@
-// TODO: Página de inicio para el usuario invitado
+// Página de inicio para el usuario invitado
 
 // ? Importaciones de componentes
 import CarrouselComponent from '../../Components/CarrouselComponent';
