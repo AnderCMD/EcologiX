@@ -1,4 +1,4 @@
-// TODO: Componente de input para formulários
+// Componente de input para formulários
 
 // ? Importaciones de dependencias
 import PropTypes from 'prop-types';
