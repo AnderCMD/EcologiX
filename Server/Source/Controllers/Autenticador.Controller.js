@@ -42,7 +42,10 @@ export const Registro = async (req, res) => {
 
 		console.log('✅ ¡Usuario registrado exitosamente!');
 
-		res.cookie('Token', Token); // Enviar token al cliente
+		res.cookie('Token', Token, {
+			httpOnly: true,
+			secure: process.env.NODE_ENV === 'production',
+		}); // Enviar token al cliente
 		res.json({
 			ID: UsuarioGuardado._id, // ID del usuario
 			Usuario: UsuarioGuardado.Usuario, // Nombre de usuario
@@ -51,7 +54,7 @@ export const Registro = async (req, res) => {
 	} catch (error) {
 		// Si hay un error
 		console.log('❌ ¡Error al registrar usuario!');
-		res.status(500).json({ message: error.message }); // Enviar respuesta al cliente
+		res.status(500).json({ message: 'Error interno del servidor' }); // Enviar respuesta al cliente
 	}
 };
 
@@ -90,7 +93,10 @@ export const Login = async (req, res) => {
 		console.log('✅ ¡Usuario logueado exitosamente!');
 
 		// ? Enviar token al cliente con cookie segura y misma URL (para que el cliente pueda acceder a la cookie)
-		res.cookie('Token', Token);
+		res.cookie('Token', Token, {
+			httpOnly: true,
+			secure: process.env.NODE_ENV === 'production',
+		});
 
 		res.json({
 			ID: UsuarioEncontrado._id, // ID del usuario
@@ -100,7 +106,7 @@ export const Login = async (req, res) => {
 	} catch (error) {
 		// Si hay un error
 		console.log('❌ ¡Error al loguear usuario!');
-		res.status(500).json({ message: error.message }); // Enviar respuesta al cliente
+		res.status(500).json({ message: 'Error interno del servidor' }); // Enviar respuesta al cliente
 	}
 };
 
@@ -110,13 +116,15 @@ export const Logout = (req, res) => {
 		// Intentar desloguear usuario
 		res.cookie('Token', '', {
 			expires: new Date(0),
+			httpOnly: true,
+			secure: process.env.NODE_ENV === 'production',
 		}); // Eliminar cookie
 		console.log('👋 ¡Usuario deslogueado exitosamente!');
 		return res.sendStatus(200); // Enviar respuesta al cliente
 	} catch (error) {
 		// Si hay un error
 		console.log('❌ ¡Error al desloguear usuario!');
-		return res.status(500).json({ message: error.message }); // Enviar respuesta al cliente
+		return res.status(500).json({ message: 'Error interno del servidor' }); // Enviar respuesta al cliente
 	}
 };
 

@@ -1,4 +1,4 @@
-// TODO: Archivo para crear la instancia de axios personalizada
+// Archivo para crear la instancia de axios personalizada
 
 // ? Importaciones de paquetes
 import axios from 'axios';

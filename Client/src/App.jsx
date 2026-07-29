@@ -1,4 +1,4 @@
-// TODO: Archivo principal de la aplicacion
+// Archivo principal de la aplicacion
 
 // ? Importaciones
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

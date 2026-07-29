@@ -1,4 +1,4 @@
-// TODO: Componente de boton reutilizable
+// Componente de boton reutilizable
 
 // ? Importaciones de dependencias
 import PropTypes from 'prop-types';

@@ -1,4 +1,4 @@
-// TODO: Contexto para el manejo de la autenticacion de usuarios
+// Contexto para el manejo de la autenticacion de usuarios
 
 // ? Importaciones
 import { createContext, useState, useContext, useEffect } from 'react';
@@ -37,12 +37,11 @@ export const AutenticadorProvider = ({ children }) => {
 	const Registro = async (Usuario) => {
 		try {
 			const Respuesta = await RegistroSolicitud(Usuario); // Enviar la solicitud de registro
-			console.log(Respuesta.data);
 
 			setUsuario(Respuesta.data); // Guardar usuario en el estado
 			setAutenticado(true); // Cambiar el estado de autenticacion
 		} catch (error) {
-			console.log(error.response); // Mostrar el error en consola
+			console.error(error); // Mostrar el error en consola
 			setErrors(error.response.data); // Guardar los errores
 		}
 	};
@@ -51,7 +50,6 @@ export const AutenticadorProvider = ({ children }) => {
 	const Login = async (Usuario) => {
 		try {
 			const Respuesta = await LoginSolicitud(Usuario); // Enviar la solicitud de inicio de sesion
-			console.log(Respuesta.data);
 
 			setUsuario(Respuesta.data); //  Guardar usuario en el estado
 			setAutenticado(true); // Cambiar el estado de autenticacion
@@ -60,7 +58,7 @@ export const AutenticadorProvider = ({ children }) => {
 				// Verificar si el error es un array
 				return setErrors(error.response.data); // Guardar los errores
 			} else {
-				console.log(error.response); // Mostrar el error en consola
+				console.error(error); // Mostrar el error en consola
 				setErrors([error.response.data.message]); // Guardar el error
 			}
 		}
@@ -117,7 +115,7 @@ export const AutenticadorProvider = ({ children }) => {
 				}
 			} catch (error) {
 				// Si el token no es valido
-				console.log(error);
+				console.error(error);
 				setAutenticado(false);
 				setUsuario(null);
 				setCargando(false);
