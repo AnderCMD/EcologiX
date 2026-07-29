@@ -1,10 +1,7 @@
-// import { UsarAutenticador } from "../../Context/AutenticadorContext";
-
 // ? Importacion de los componentes
 import NavComponent from "../../Components/Usuario/NavComponent";
 
 export default function InicioPage() {
-    // const { Usuario } = UsarAutenticador();
     return (
         <div className="flex flex-row">
             <NavComponent />
