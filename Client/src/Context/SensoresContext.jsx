@@ -1,5 +1,3 @@
-// TODO: Exportar el contexto de Sensores para usarlo en cualquier componente de la aplicacion
-
 // ? Importaciones de dependencias
 import { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -12,7 +10,7 @@ import {
 } from '../API/Sensores';
 
 // ? Creacion del contexto
-const SensorContext = createContext();
+export const SensorContext = createContext();
 
 // ? Hook para usar el contexto de Sensores en cualquier componente de la aplicacion
 export const UsarSensores = () => {
@@ -56,7 +54,7 @@ export default function SensorProvider({ children }) {
 			const Respuesta = await EliminarSensorRequest(ID);
 			console.log(Respuesta);
 			if (Respuesta.status === 204)
-				ObtenerSensores(Sensores.filter((Sensor) => Sensor._id !== ID));
+				setSensores(Sensores.filter((Sensor) => Sensor._id !== ID));
 		} catch (error) {
 			console.log(error);
 		}
@@ -73,17 +71,13 @@ export default function SensorProvider({ children }) {
 	};
 
 	const ActualizarSensor = async (ID, Sensor) => {
-		const SensorString = Object.fromEntries(
-			Object.entries(Sensor).map(([key, value]) => [key, value.toString()])
-		);
-
 		try {
-			const Respuesta = await ActualizarSensorRequest(ID, SensorString);
+			const Respuesta = await ActualizarSensorRequest(ID, Sensor);
 			console.log(Respuesta);
 		} catch (error) {
 			console.log(error);
 		}
-	}
+	};
 
 	return (
 		<SensorContext.Provider

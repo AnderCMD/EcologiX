@@ -1,4 +1,4 @@
-// TODO: Esquema de la tabla Sensor
+// Esquema de la tabla Sensor
 
 // ? Importaciones
 import mongoose from 'mongoose';

@@ -51,7 +51,7 @@ export const Registro = async (req, res) => {
 	} catch (error) {
 		// Si hay un error
 		console.log('❌ ¡Error al registrar usuario!');
-		res.status(500).json({ message: error.message }); // Enviar respuesta al cliente
+		res.status(500).json({ message: 'Error interno del servidor' }); // Enviar respuesta al cliente
 	}
 };
 
@@ -100,7 +100,7 @@ export const Login = async (req, res) => {
 	} catch (error) {
 		// Si hay un error
 		console.log('❌ ¡Error al loguear usuario!');
-		res.status(500).json({ message: error.message }); // Enviar respuesta al cliente
+		res.status(500).json({ message: 'Error interno del servidor' }); // Enviar respuesta al cliente
 	}
 };
 
@@ -116,7 +116,7 @@ export const Logout = (req, res) => {
 	} catch (error) {
 		// Si hay un error
 		console.log('❌ ¡Error al desloguear usuario!');
-		return res.status(500).json({ message: error.message }); // Enviar respuesta al cliente
+		return res.status(500).json({ message: 'Error interno del servidor' }); // Enviar respuesta al cliente
 	}
 };
 
