@@ -1,4 +1,4 @@
-// TODO: Archivo de conexion con el backend, para la tabla de Sensores
+// Archivo de conexion con el backend, para la tabla de Sensores
 
 // ? Importaciones
 import axios from './Axios';
