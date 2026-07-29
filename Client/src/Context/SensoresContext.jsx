@@ -37,38 +37,35 @@ export default function SensorProvider({ children }) {
 			const Respuesta = await ObtenerSensoresRequest();
 			setSensores(Respuesta.data);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 
 	// Funcion para crear un sensor
 	const CrearSensor = async (Sensor) => {
 		try {
-			const Respuesta = await CrearSensorRequest(Sensor);
-			console.log(Respuesta);
+			await CrearSensorRequest(Sensor);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 
 	const EliminarSensor = async (ID) => {
 		try {
 			const Respuesta = await EliminarSensorRequest(ID);
-			console.log(Respuesta);
 			if (Respuesta.status === 204)
 				ObtenerSensores(Sensores.filter((Sensor) => Sensor._id !== ID));
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 
 	const ObtenerSensor = async (ID) => {
 		try {
 			const Respuesta = await ObtenerSensorRequest(ID);
-			console.log(Respuesta);
 			return Respuesta.data;
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 
@@ -78,10 +75,9 @@ export default function SensorProvider({ children }) {
 		);
 
 		try {
-			const Respuesta = await ActualizarSensorRequest(ID, SensorString);
-			console.log(Respuesta);
+			await ActualizarSensorRequest(ID, SensorString);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	}
 
