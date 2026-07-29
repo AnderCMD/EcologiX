@@ -10,7 +10,7 @@ export const ObtenerSensores = async (req, res) => {
 		const Sensores = await SensorModel.find({
 			// Buscar sensores por id de usuario y poblar el campo usuario con los datos del usuario
 			Usuario: req.Usuario.ID,
-		}).populate('Usuario');
+		}).populate('Usuario', '-Password');
 		console.log('✅ ¡Sensores obtenidos exitosamente!');
 		res.status(200).json(Sensores); // Responder con el mensaje de exito
 	} catch (error) {
@@ -22,9 +22,7 @@ export const ObtenerSensores = async (req, res) => {
 // ? Obtener sensor por id (GET)
 export const ObtenerSensor = async (req, res) => {
 	try {
-		const Sensor = await SensorModel.findById(req.params.id).populate(
-			'Usuario'
-		); // Buscar sensor por id y poblar el campo usuario con los datos del usuario
+		const Sensor = await SensorModel.findById(req.params.id).populate('Usuario', '-Password'); // Buscar sensor por id y poblar el campo usuario con los datos del usuario
 
 		// Si no se encuentra el sensor
 		if (!Sensor) {
