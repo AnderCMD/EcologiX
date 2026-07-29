@@ -1,4 +1,4 @@
-// TODO: Obtener los sensores del usuario y mostrarlos en pantalla
+// Obtener los sensores del usuario y mostrarlos en pantalla
 
 // ? Importaciones de dependencias
 import { useEffect } from 'react';
