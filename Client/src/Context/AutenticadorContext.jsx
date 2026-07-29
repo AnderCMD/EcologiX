@@ -1,4 +1,4 @@
-// TODO: Contexto para el manejo de la autenticacion de usuarios
+// Contexto para el manejo de la autenticacion de usuarios
 
 // ? Importaciones
 import { createContext, useState, useContext, useEffect } from 'react';
