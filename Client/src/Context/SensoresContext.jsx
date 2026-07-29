@@ -56,7 +56,7 @@ export default function SensorProvider({ children }) {
 			const Respuesta = await EliminarSensorRequest(ID);
 			console.log(Respuesta);
 			if (Respuesta.status === 204)
-				ObtenerSensores(Sensores.filter((Sensor) => Sensor._id !== ID));
+				setSensores(Sensores.filter((Sensor) => Sensor._id !== ID));
 		} catch (error) {
 			console.log(error);
 		}
