@@ -1,5 +1,3 @@
-// TODO: Exportar el contexto de Sensores para usarlo en cualquier componente de la aplicacion
-
 // ? Importaciones de dependencias
 import { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -12,7 +10,7 @@ import {
 } from '../API/Sensores';
 
 // ? Creacion del contexto
-const SensorContext = createContext();
+export const SensorContext = createContext();
 
 // ? Hook para usar el contexto de Sensores en cualquier componente de la aplicacion
 export const UsarSensores = () => {
