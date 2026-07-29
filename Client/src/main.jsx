@@ -1,4 +1,4 @@
-// TODO: Archivo principal de la aplicacion
+// ? Archivo principal de la aplicacion
 
 // ? Importacion de las dependencias
 import React from 'react'
