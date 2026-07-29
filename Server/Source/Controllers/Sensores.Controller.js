@@ -72,7 +72,16 @@ export const CrearSensor = async (req, res) => {
 // ? Eliminar sensor (DELETE)
 export const EliminarSensor = async (req, res) => {
 	try {
-		const Sensor = await SensorModel.findByIdAndDelete(req.params.id); // Buscar sensor por id y eliminarla
+		const Sensor = await SensorModel.findOneAndDelete({
+			_id: req.params.id,
+			Usuario: req.Usuario.ID,
+		}); // Buscar sensor por id y eliminarlo
+
+		if (!Sensor) {
+			console.log('⚠️ ¡Sensor no encontrado!');
+			return res.status(404).json({ message: '⚠️ Sensor no encontrado' });
+		}
+
 		console.log('✅ ¡Sensor eliminado exitosamente!');
 		res.status(204).json(Sensor); // Responder con el mensaje de exito
 	} catch (error) {
@@ -85,9 +94,19 @@ export const EliminarSensor = async (req, res) => {
 // ? Actualizar sensor (PUT)
 export const ActualizarSensor = async (req, res) => {
 	try {
+		const { Nombre, Descripcion, Puerto, Velocidad_Transmision, Imagen } = req.body;
+
+		// Filtrar solo los campos permitidos para la actualización
+		const updateData = {};
+		if (Nombre !== undefined) updateData.Nombre = Nombre;
+		if (Descripcion !== undefined) updateData.Descripcion = Descripcion;
+		if (Puerto !== undefined) updateData.Puerto = Puerto;
+		if (Velocidad_Transmision !== undefined) updateData.Velocidad_Transmision = Velocidad_Transmision;
+		if (Imagen !== undefined) updateData.Imagen = Imagen;
+
 		const Sensor = await SensorModel.findByIdAndUpdate(
 			req.params.id,
-			req.body,
+			updateData,
 			{
 				new: true,
 			}

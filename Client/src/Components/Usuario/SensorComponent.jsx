@@ -1,4 +1,5 @@
 // ? Importaciones de dependencias
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { UsarSensores } from "../../Context/SensoresContext";
 import propTypes from 'prop-types';
@@ -7,19 +8,19 @@ export default function SensorComponent({Sensor}) {
     const { EliminarSensor } = UsarSensores(); // Obtener los sensores del contexto
 
     // ? Generar un número aleatorio para la temperatura y la humedad
-    function TemperaturaRandom() {
+    const temperatura = useMemo(() => {
         // Genera un número aleatorio entre 0 y 1
         let Random = Math.random();
         // Calcula el número aleatorio dentro del rango especificado
         return Math.floor(Random * (21 - 18 + 1)) + 18;
-    }
+    }, []);
 
-    function HumedadRandom() {
+    const humedad = useMemo(() => {
         // Genera un número aleatorio entre 0 y 1
         let Random = Math.random();
         // Calcula el número aleatorio dentro del rango especificado
         return Math.floor(Random * (57 - 65 + 1)) + 65;
-    }
+    }, []);
 
     return (
         <div key={Sensor._id}>
@@ -29,8 +30,8 @@ export default function SensorComponent({Sensor}) {
                     <div className="p-5">
                         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{ Sensor.Nombre }</h5>
                         <p className="mb-3 tracking-wider text-justify break-all font-normaltext-gray-300">{ Sensor.Descripcion }.</p>
-                        <p className='mb-3 tracking-wider text-justify break-all font-normaltext-gray-300'>Temperatura: <span className='font-bold text-emerald-400'>{TemperaturaRandom()}C°</span></p>
-                        <p className='mb-3 tracking-wider text-justify break-all font-normaltext-gray-300'>Humedad: <span className='font-bold text-emerald-400'>{HumedadRandom()}%</span></p>
+                        <p className='mb-3 tracking-wider text-justify break-all font-normaltext-gray-300'>Temperatura: <span className='font-bold text-emerald-400'>{temperatura}C°</span></p>
+                        <p className='mb-3 tracking-wider text-justify break-all font-normaltext-gray-300'>Humedad: <span className='font-bold text-emerald-400'>{humedad}%</span></p>
                     </div>
                 </Link>
                 <div className="flex gap-4 px-4 pb-4 tracking-wider text max-sm:flex-col">
