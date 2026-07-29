@@ -1,4 +1,4 @@
-// TODO: Renderizar las rutas protegidas
+// Descripción: Renderizar las rutas protegidas
 
 // ? Importaciones de dependencias
 import { UsarAutenticador } from '../Context/AutenticadorContext';
