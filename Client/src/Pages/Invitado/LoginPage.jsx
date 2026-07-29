@@ -1,4 +1,4 @@
-// TODO: Login de usuario invitado
+// Login de usuario invitado
 
 // ? Importacion de las dependencias
 import { useForm } from 'react-hook-form';
